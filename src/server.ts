@@ -15,5 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/users", userRoutes);
 
 app.listen(port, () => {
-	console.log(`🚀 Server running at http://localhost:${port}`);
+	if (process.env.ENV !== "production") {
+		console.log(`🚀 Server running at http://localhost:${port}`);
+	}
 });
