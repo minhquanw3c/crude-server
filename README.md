@@ -32,10 +32,16 @@ then, run
 
 afterward
 
-> npx prisma push db
+> npx prisma db push
 
 a new **dev.db** will appear in folder **prisma**, this file is your local database to store data of CRUD operations.
 
 finally, to start the application, run
 
 > npm run dev
+
+bonus point, to view and browse created database on chrome, run
+
+> npx prisma studio
+
+a new chrome tab will appear to show the database which you can interact with
