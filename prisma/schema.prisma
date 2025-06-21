@@ -1,7 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
-  output   = "./../src/generated/prisma"
+  output          = "./../src/generated/prisma"
 }
 
 datasource db {
@@ -10,8 +10,26 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
+  id       Int    @id @default(autoincrement())
   name     String
-  email    String   @unique
+  email    String @unique
   password String
+}
+
+model Token {
+  id       Int     @id @default(autoincrement())
+  tokenId  Int     @unique
+  currency String
+  date     String
+  price    Float
+  imageUrl String
+  chains   Chain[]
+}
+
+model Chain {
+  id       Int     @id @default(autoincrement())
+  chainId  Int     @unique
+  name     String
+  imageUrl String
+  tokens   Token[]
 }
