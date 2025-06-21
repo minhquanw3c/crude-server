@@ -4,6 +4,7 @@ import multer from "multer";
 
 import userRoutes from "./routes/user.route";
 import tokenRoutes from "./routes/token.route";
+import chainRoutes from "./routes/chain.route";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/users", userRoutes);
 app.use("/tokens", tokenRoutes);
+app.use("/chains", chainRoutes);
 
 app.listen(port, () => {
 	if (process.env.ENV !== "production") {

@@ -13,6 +13,10 @@
 > PUT /users/:id - To update user information
 >
 > DELETE /users/:id - To delete user from database
+>
+> GET /tokens - To fetch list of tokens
+>
+> GET /chains - To fetch list of chains
 
 ### Requirements
 > OS: Windows
@@ -35,6 +39,10 @@ afterward
 > npx prisma db push
 
 a new **dev.db** will appear in folder **prisma**, this file is your local database to store data of CRUD operations.
+
+next, to populate initial data, run
+
+> npm run prisma:seed
 
 finally, to start the application, run
 
