@@ -7,7 +7,9 @@
 ### Available endpoints
 
 > GET /users - To get all of registered users
-> 
+>
+> GET /users/:id - To get details of a user
+>
 > POST /users - To create a new user
 >
 > PUT /users/:id - To update user information

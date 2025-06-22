@@ -15,6 +15,26 @@ export async function getUsers(req: Request, res: Response) {
 	}
 }
 
+export async function getUser(req: Request, res: Response) {
+	try {
+		const { id } = req.params;
+		const userToFind = await UserService.findUserById(Number(id));
+
+		if (!userToFind) {
+			res.status(404).json({ message: "User not found" });
+			return;
+		}
+
+		res.status(200).json({
+			user: userToFind,
+		});
+	} catch (err) {
+		res.status(500).json({
+			message: err instanceof Error ? err.message : INTERNAL_ERROR,
+		});
+	}
+}
+
 export async function createUser(req: Request, res: Response) {
 	try {
 		const { name, email, password } = req.body;
