@@ -2,7 +2,7 @@
 
 ### Technologies used
 
-> ExpressJS, Prisma, JWT
+> ExpressJS, Prisma
 
 ### Available endpoints
 
